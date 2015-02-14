@@ -1,0 +1,6 @@
+name = Bootstrap Base
+description = Drupal base theme for bootstrap.
+version = 1.0
+core = 7.x
+base theme = bootstrap
+
