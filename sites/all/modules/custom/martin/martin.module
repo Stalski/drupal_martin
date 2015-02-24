@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ *
+ */
+
+/**
+ * Implements hook_ds_fields_info_alter
+ */
+function martin_ds_fields_info_alter(&$fields, $entity_type) {
+  if ($entity_type == 'node') {
+    $fields['node_link']['properties']['settings']['link_class'] = array('type' => 'textfield');
+    $fields['node_link']['properties']['default']['link_class'] = '';
+    $fields['node_link']['function'] = 'martin_node_link';
+  }
+}
+
+/**
+ * Render the read more link.
+ */
+function martin_node_link($field) {
+
+  $output = '';
+  $settings = isset($field['formatter_settings']) ? $field['formatter_settings'] : array();
+  $settings += $field['properties']['default'];
+  $output = t($settings['link text']);
+
+  if (empty($output)) {
+    return;
+  }
+
+  // Link.
+  $uri_info = entity_uri($field['entity_type'], $field['entity']);
+  if (!empty($settings['link_class'])) {
+    $uri_info['options']['attributes']['class'] = explode(' ', $settings['link_class']);
+  }
+  $output = l($output, $uri_info['path'], $uri_info['options']);
+
+  // Wrapper and class.
+  if (!empty($settings['wrapper'])) {
+    $wrapper = check_plain($settings['wrapper']);
+    $class = (!empty($settings['class'])) ? ' class="' . check_plain($settings['class']) . '"' : '';
+    $output = '<' . $wrapper . $class . '>' . $output . '</' . $wrapper . '>';
+  }
+
+  return $output;
+}
