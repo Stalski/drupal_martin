@@ -58,7 +58,7 @@ function blog_feature_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '4',
       'label' => 'hidden',
-      'format' => 'ds_post_date_day_only',
+      'format' => 'ds_post_date_date_only_long',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',

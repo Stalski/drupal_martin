@@ -138,7 +138,7 @@ function blog_feature_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'day_only';
+  $handler->display->display_options['fields']['created']['date_format'] = 'date_only_long';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   $translatables['blog'] = array(
     t('Master'),
@@ -175,7 +175,7 @@ function blog_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Blog categories';
+  $handler->display->display_options['title'] = 'Categorieën';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'meer';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -207,7 +207,7 @@ function blog_feature_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block');
   $translatables['blog_categories'] = array(
     t('Master'),
-    t('Blog categories'),
+    t('Categorieën'),
     t('meer'),
     t('Toepassen'),
     t('Opnieuw instellen'),

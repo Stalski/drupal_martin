@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install file for martin.
+ */
+
+/**
+ * Implements hook_instal().
+ */
+function martin_install() {
+  martin_update_7001();
+}
+
+/**
+ * Create the date formats.
+ */
+function martin_update_7001() {
+
+  db_insert('date_formats')
+    ->fields(array(
+      'format' => 'd F Y',
+      'type' => 'custom',
+      'locked' => 0,
+    ))
+    ->execute();
+
+   db_insert('date_format_type')
+    ->fields(array(
+      'type' => 'date_only_long',
+      'title' => 'Date only long',
+      'locked' => 0,
+    ))
+    ->execute();
+
+  variable_set('date_format_date_only_long', 'd F Y');
+
+}
+
