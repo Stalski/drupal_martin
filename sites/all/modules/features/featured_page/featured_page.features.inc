@@ -26,7 +26,7 @@ function featured_page_node_info() {
       'base' => 'node_content',
       'description' => t('Create a featured page when you want to create a page with the ability to make it available in the header slideshow. This way you can create hot topics for a certain period of time.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );

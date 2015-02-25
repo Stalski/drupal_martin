@@ -393,6 +393,7 @@ function featured_page_field_default_field_instances() {
           'upload' => 'upload',
           'youtube' => 0,
         ),
+        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 7,
