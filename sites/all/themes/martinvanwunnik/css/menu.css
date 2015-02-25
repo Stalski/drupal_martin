@@ -1,0 +1,12 @@
+
+#main-menu {
+  float: right;
+  margin-top: 75px;
+}
+
+#main-menu ul li a {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 1em;
+  color: #000;
+  text-transform: uppercase;
+}

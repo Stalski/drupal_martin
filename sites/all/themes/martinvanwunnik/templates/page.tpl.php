@@ -5,10 +5,17 @@
 ?>
 <header id="navbar" role="banner">
 
-  <div class="navbar-header">
-    <div class="container">
-      <?php if (!empty($secondary_nav)): ?>
-        <?php print render($secondary_nav); ?>
+  <div class="container">
+    <div class="navbar-header clearfix">
+      
+      <?php if (!empty($primary_nav)): ?>
+      <div id="main-menu" class="navbar-collapse collapse">
+        <nav role="navigation">
+          <?php if (!empty($primary_nav)): ?>
+            <?php print render($primary_nav); ?>
+          <?php endif; ?>
+        </nav>
+      </div>
       <?php endif; ?>
 
       <?php if ($logo): ?>
@@ -23,13 +30,6 @@
       </figure>
       <?php endif; ?>
 
-      <ul class="social-links">
-        <li><a class="facebook" href="https://www.facebook.com/creating.workshops" target="_blank">Facebook</a></li>
-        <?php /* <li class="pipe">|</li>
-        <li><a class="twitter" href="http://www.twitter.com" target="_blank">Twitter</a></li>
-        <li class="pipe">|</li> */ ?>
-        <li><a class="email" href="mailto:<?php print variable_get('site_mail', ''); ?>" target="_blank">Mail</a></li>
-      </ul>
     </div>
   </div>
 
@@ -37,17 +37,6 @@
     <?php print $header_carousel; ?>
   <?php endif; ?>
 
-  <?php if (!empty($primary_nav)): ?>
-  <div class="container">
-    <div class="navbar-collapse collapse">
-      <nav id="main-menu" role="navigation">
-        <?php if (!empty($primary_nav)): ?>
-          <?php print render($primary_nav); ?>
-        <?php endif; ?>
-      </nav>
-    </div>
-  </div>
-  <?php endif; ?>
 </header>
 
 <div class="main-container container">

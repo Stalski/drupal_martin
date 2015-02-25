@@ -34,14 +34,27 @@ function _feature_page_header_block() {
     $image_items = field_get_items('node', $node, 'field_bg_image');
     $body_items = field_get_items('node', $node, 'field_header_text');
 
-    $items[] = array(
+    $item = array(
       'title' => $node->title,
       'message' => $body_items[0]['safe_value'],
       'link' => l($link_items[0]['title'], $link_items[0]['url'], array(
         'attributes' => array('role' => 'button', 'class' => array('btn', 'btn-lg', 'btn-primary')),
       )),
-      'image' => theme('image', array('path' => $image_items[0]['uri'])),
+      //'image' => theme('image', array('path' => $image_items[0]['uri'])),
+      'image' => theme('image_style', array(
+        'style_name' => 'header_carousel',
+        'path' => $image_items[0]['uri'])
+      ),
     );
+
+    // Extra featured image if existing.
+    $extra_image_items = field_get_items('node', $node, 'field_small_image');
+    if (!empty($extra_image_items)) {
+      $item['small_image'] = theme('image', array('path' => $extra_image_items[0]['uri']));
+    }
+
+    $items[] = $item;
+
   }
 
   $build = array(

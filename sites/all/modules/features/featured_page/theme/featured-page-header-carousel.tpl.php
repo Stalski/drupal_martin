@@ -6,7 +6,7 @@
 $carousel_id = "genericHeader";
 ?>
 
-<div id="<?php print $carousel_id ?>" class="carousel slide" data-ride="carousel">
+<div id="<?php print $carousel_id ?>" class="carousel slide clearfix" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <?php foreach ($items as $delta => $item): ?>
@@ -19,10 +19,17 @@ $carousel_id = "genericHeader";
     <div class="item<?php print $delta == 0 ? ' active' : ''; ?>">
       <?php print $item['image']; ?>
       <div class="container">
+        <?php if ($item['small_image']) : ?>
+        <div class="carousel-caption-left">
+          <?php print $item['small_image']; ?>
+        </div>
+        <?php endif; ?>
         <div class="carousel-caption">
           <h1><?php print $item['title']; ?></h1>
           <?php print $item['message']; ?>
-          <?php print $item['link']; ?>
+          <div class="button-group">
+            <?php print $item['link']; ?>
+          </div>
         </div>
       </div>
     </div>

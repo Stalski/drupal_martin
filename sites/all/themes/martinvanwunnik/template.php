@@ -141,11 +141,12 @@ function martinvanwunnik_preprocess_page(&$variables) {
 
   // Primary nav.
   $data = menu_tree_all_data('main-menu');
-  $tree = $footer_tree = menu_tree_output($data);
+  $tree = menu_tree_output($data);
   $tree['#theme_wrappers'] = array('menu_tree__primary');
   $variables['primary_nav'] = drupal_render($tree);
 
   //dsm($footer_tree, 'footer tree');
+  /*$footer_tree = $tree;
   foreach ($footer_tree as $mlid => $menu_link_data) {
     if (is_numeric($mlid)) {
       $footer_tree[$mlid]['#doormat'] = TRUE;
@@ -153,6 +154,7 @@ function martinvanwunnik_preprocess_page(&$variables) {
   }
   $footer_tree['#theme_wrappers'] = array('menu_tree__primary');
   $variables['footer_nav'] = drupal_render($footer_tree);
+   */
 
   // Header carousel.
   $variables['header_carousel'] = '';

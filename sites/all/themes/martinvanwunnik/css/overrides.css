@@ -1,0 +1,93 @@
+/**
+ * Carousel overrides.
+ */
+
+.carousel {
+  height: auto;
+}
+.carousel .carousel-inner {
+  height: auto;
+  overflow: hidden;
+}
+
+.carousel-control {
+  bottom: 0;
+  top: 45%;
+  left: 0;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  width: 125px;
+  height: 125px;
+}
+
+.carousel-control.left {
+    background-image: url("../images/control-left.png");
+    background-repeat: no-repeat;
+}
+.carousel-control.right {
+    background-image: url("../images/control-right.png");
+    background-repeat: no-repeat;
+}
+
+.carousel h1 {
+  font-family: 'Bitter-Bold', sans-serif;
+  font-size: 4em;
+  letter-spacing: 0.02em;
+}
+
+.carousel ul {
+  margin: 0; padding: 0;
+}
+
+.carousel ul li {
+  list-style-image: none;
+  list-style-type: none;
+  background: url("../images/bullet_header_01.png") 0 50% no-repeat;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding-left: 30px;
+}
+
+.carousel .carousel-caption {
+  text-align: left;
+  bottom: auto;
+  top: 15%;
+  left: 35%;
+}
+.carousel .carousel-caption-left {
+  text-align: right;
+  bottom: auto;
+  position: absolute; top: 10%; left: 19%;
+  padding-top: 0;
+  z-index: 10;
+}
+
+.carousel .button-group {
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.carousel .btn-primary,
+.carousel .btn-lg {
+  border: 2px solid #FFF;
+  color: #FFF;
+  font-family: 'Bitter-Bold', sans-serif;
+  font-size: 1.3em;
+  background-color: rgba(255,255,255, 0.3);
+  border-radius: 0px;
+  padding: 0.3em 1.5em;
+  margin-left: 20px;
+}
+
+.carousel a.btn-primary:hover {
+  background-color: rgba(255,255,255, 0.1);
+}
+
+/**
+ * Navbar overrides.
+ */
+.navbar-header {
+  float: none;
+}

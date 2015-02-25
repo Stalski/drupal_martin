@@ -12,7 +12,14 @@
 /**
 Fonts to use, imported from google.
 **************
-font-family: 'Lato', sans-serif;
-font-family: 'Bitter', sans-serif;
-font-family: 'Roboto', sans-serif;
+font-family: 'Lato Regular','Lato-Regular', sans-serif;
+font-family: 'Lato Bold', sans-serif;
+font-family: 'Bitter-Regular', sans-serif;
+font-family: 'Bitter-Bold', sans-serif;
+font-family: 'Roboto', 'Roboto-regular', sans-serif;
+font-family: 'Roboto Bold', 'Roboto-Bold', sans-serif;
 **/
+
+.logo {
+  margin: 20px 0;
+}

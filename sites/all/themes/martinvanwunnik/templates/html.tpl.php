@@ -68,7 +68,7 @@
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Bitter:400,700|Roboto:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Bitter:400,700|Roboto:400,700&subset=latin' rel='stylesheet' type='text/css'>
 
     <?php print $styles; ?>
     <!--[if lt IE 9]>
