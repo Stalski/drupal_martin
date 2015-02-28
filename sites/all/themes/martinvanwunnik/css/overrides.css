@@ -1,4 +1,11 @@
 /**
+ * Generic overrides & fixes.
+ */
+.container .container {
+  width: auto;
+}
+
+/**
  * Carousel overrides.
  */
 
@@ -90,4 +97,21 @@
  */
 .navbar-header {
   float: none;
+}
+
+/**
+ * Header h1 overrides.
+ */
+.page-header {
+  border-bottom: none;
+  margin: 0.4em 0;
+}
+
+/**
+ * Breadcrumb overrides.
+ */
+ol.breadcrumb {
+  background-color: transparent;
+  border-radius: 0;
+  display: inline;
 }

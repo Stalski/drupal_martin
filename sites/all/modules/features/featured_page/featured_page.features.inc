@@ -17,6 +17,39 @@ function featured_page_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function featured_page_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: header_carousel.
+  $styles['header_carousel'] = array(
+    'name' => 'header_carousel',
+    'label' => 'header_carousel',
+    'effects' => array(
+      1 => array(
+        'label' => 'Bijsnijden',
+        'help' => 'Door bij te snijden worden delen van een afbeelding verwijderd zodat deze binnen de opgegeven maten past.',
+        'effect callback' => 'image_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_crop_form',
+        'summary theme' => 'image_crop_summary',
+        'module' => 'image',
+        'name' => 'image_crop',
+        'data' => array(
+          'width' => 2500,
+          'height' => 987,
+          'anchor' => 'center-center',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function featured_page_node_info() {

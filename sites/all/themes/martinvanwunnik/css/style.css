@@ -10,16 +10,174 @@
 }
 
 /**
-Fonts to use, imported from google.
-**************
-font-family: 'Lato Regular','Lato-Regular', sans-serif;
-font-family: 'Lato Bold', sans-serif;
-font-family: 'Bitter-Regular', sans-serif;
-font-family: 'Bitter-Bold', sans-serif;
-font-family: 'Roboto', 'Roboto-regular', sans-serif;
-font-family: 'Roboto Bold', 'Roboto-Bold', sans-serif;
+ * Fonts to use, imported from google.
+ * ***********************************
+ * font-family: 'Lato Regular','Lato-Regular', sans-serif;
+ * font-family: 'Lato Bold', sans-serif;
+ * font-family: 'Bitter-Regular', sans-serif;
+ * font-family: 'Bitter-Bold', sans-serif;
+ * font-family: 'Roboto', 'Roboto-regular', sans-serif;
+ * font-family: 'Roboto Bold', 'Roboto-Bold', sans-serif;
 **/
 
-.logo {
-  margin: 20px 0;
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#page-title {
+  background-color: #1767ac; /* blue */
+}
+
+h1.page-header {
+  font-family: 'Bitter', sans-serif;
+  line-height: 3em;
+  font-size: 2.1em;
+  color: #FFF;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Bitter', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Bitter', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 2.2em;
+}
+
+h4 {
+  font-family: 'Bitter', sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.breadcrumb-wrapper {
+  margin: 30px 0 20px; 
+}
+
+ul {
+  margin: 0; padding: 0;
+}
+
+strong {
+  font-family: "Open Sans Condensed Bold";
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.6em;
+}
+
+.floatleft {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.floatright {
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.more-link,
+.read-more {
+  font-size: 1.6em;
+  background-color: #000;
+  padding: 10px 25px 10px 50px;
+  margin: 30px 50px 0 0;
+  background: #000 url("../images/pijl_button_01.png") 15px 50% no-repeat;
+  display: inline-block;
+}
+
+.more-link a,
+.cta-link a,
+.read-more a {
+  color: #FFF;
+}
+
+.icon-link {
+  margin: 30px 0 0;
+  background: transparent url("../images/pijl_01.png") 50% 100% no-repeat;
+  padding-bottom: 50px;
+  font-family: 'Bitter', sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.icon-link a {
+  color: #000;
+}
+
+.blue {
+    
+}
+
+.node .content ul li,
+.region-content ul li {
+  background: transparent url("../images/bullet_blue.png") 0 50% no-repeat;
+  padding-left: 30px;
+  list-style-type: none;
+  line-height: 1.9em;
+  color: #1767ac; /* blue */
+}
+
+/**
+ * Component specific overrides.
+ */
+
+
+.teaser-about img {
+  width: 100%;
+  height: auto;
+}
+
+
+/**
+ * Hompage components 
+ */
+.page-home .pane-custom .pane-content {
+  width: 75%;
+  margin: 15px auto 30px auto;
+  text-align: center;
+}
+
+.page-home p {
+  font-size: 1.5em;
+}
+/* Lead */
+.page-home p.lead {
+  color: #FFF;
+  font-size: 2.3em;
+  padding: 30px 30px 30px 90px;
+  background: #000 url("../images/pijl_titel_01.png") 0 50% no-repeat;
+}
+
+/* row-content-header : about block */
+.row-content-header .col-md-7 p {
+  margin: 0 50px 50px 50px;
+}
+
+.row-content-header .read-more {
+  margin-left: 50px;
+}
+
+.teaser-about {
+  margin: 100px 0 50px 0; 
+  font-family: "Lato-Regular";
+}
+
+.row-content-1 {
+  background-color: #e8eaec;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.row-content-2 .col-md-6 .panel-1col {
+    margin-right: 30px;
 }

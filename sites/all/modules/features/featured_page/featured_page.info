@@ -34,6 +34,7 @@ features[field_instance][] = node-featured_page-field_header_text
 features[field_instance][] = node-featured_page-field_link
 features[field_instance][] = node-featured_page-field_page_type
 features[field_instance][] = node-featured_page-field_small_image
+features[image][] = header_carousel
 features[node][] = featured_page
 features[variable][] = field_bundle_settings_node__featured_page
 features[variable][] = language_content_type_featured_page

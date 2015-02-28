@@ -18,7 +18,9 @@ function _feature_page_header_block() {
   $query->innerJoin("field_data_field_page_type", "fpt", "fpt.entity_id = n.nid AND fpt.entity_type = 'node' AND fpt.bundle = 'featured_page' ");
   $query->fields('n', array('nid', 'title'));
   $query->condition('n.status', '1');
+  //$query->condition('n.promote', '1');
   $query->condition('n.type', 'featured_page');
+  $query->condition('n.language', $GLOBALS['language']->language);
   $query->condition('fpt.field_page_type_value', 'featured_header');
   $query->range(0, 10);
   $result = $query->execute();

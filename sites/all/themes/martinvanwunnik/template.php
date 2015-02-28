@@ -13,13 +13,19 @@ function martinvanwunnik_preprocess_views_view_grid(&$vars) {
   if (!empty($vars['view']->style_options)) {
     $number_of_columns = $vars['view']->style_options['columns'];
     if ($number_of_columns == 4) {
-      $column_class = "col-xs-6 col-md-3";
+      $column_class = "col-xs-6 col-md-3 col-sm-6";
     }
     elseif ($number_of_columns == 3) {
-      $column_class = "col-md-4";
+      $column_class = "col-xs-6 col-md-4 col-sm-6";
     }
     elseif ($number_of_columns == 6) {
-      $column_class = "col-md-2";
+      $column_class = "col-xs-6 col-md-2 col-sm-6";
+    }
+    elseif ($number_of_columns == 2) {
+      $column_class = "col-md-6";
+    }
+    elseif ($number_of_columns == 1) {
+      $column_class = "col-md-12";
     }
   }
   else {
@@ -156,6 +162,11 @@ function martinvanwunnik_preprocess_page(&$variables) {
   $variables['footer_nav'] = drupal_render($footer_tree);
    */
 
+  // Slogan (ow yeah, we use it!
+  if (!drupal_is_front_page()) {
+    $variables['site_slogan'] = NULL;
+  }
+
   // Header carousel.
   $variables['header_carousel'] = '';
   module_load_include('inc', 'featured_page', 'includes/blocks');
@@ -176,6 +187,31 @@ function martinvanwunnik_preprocess_page(&$variables) {
 function martinvanwunnik_process_page(&$variables) {
   // classes array adjustments.
 }
+
+/**
+ * Overrides theme_breadcrumb().
+ *
+ * Print breadcrumbs as an ordered list.
+ */
+function martinvanwunnik_breadcrumb($variables) {
+  $output = '';
+  $breadcrumb = $variables['breadcrumb'];
+
+  // Determine if we are to display the breadcrumb.
+  $bootstrap_breadcrumb = theme_get_setting('bootstrap_breadcrumb');
+  if (($bootstrap_breadcrumb == 1 || ($bootstrap_breadcrumb == 2 && arg(0) == 'admin')) && !empty($breadcrumb)) {
+
+    $output = t('You are here:') . ' ' . theme('item_list', array(
+      'attributes' => array(
+        'class' => array('breadcrumb'),
+      ),
+      'items' => $breadcrumb,
+      'type' => 'ol',
+    ));
+  }
+  return $output;
+}
+
 
 /**
  * Overrides theme_menu_link().
