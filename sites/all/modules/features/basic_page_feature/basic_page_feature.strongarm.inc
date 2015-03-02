@@ -51,6 +51,12 @@ function basic_page_feature_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'icon' => array(
+        'custom_settings' => TRUE,
+      ),
+      'featured' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -58,7 +64,7 @@ function basic_page_feature_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '6',
         ),
         'language' => array(
           'weight' => '1',
@@ -72,6 +78,18 @@ function basic_page_feature_strongarm() {
           ),
           'full' => array(
             'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'icon' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'featured' => array(
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Custom martin feature feature.
+ */
+
+include_once 'custom_martin_feature.features.inc';

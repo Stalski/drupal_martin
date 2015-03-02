@@ -53,13 +53,20 @@
   <div class="container">
     <?php print render($title_prefix); ?>
     <?php if (!empty($title)): ?>
-      <h1 class="page-header"><?php print $title; ?></h1>
+      <h1 class="page-header">
+        <?php if (!empty($title_icon)) : ?>
+          <?php print $title_icon; ?>
+        <?php endif; ?>
+        <?php print $title; ?>
+      </h1>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
   </div>
 </header>
 
+
 <?php if (drupal_is_front_page()) : ?>
+
     <?php print $messages; ?>
 
     <?php if (!empty($page['highlighted'])): ?>
@@ -111,16 +118,36 @@
 
 <footer class="footer">
   <div class="container">
+    
     <?php print render($page['footer']); ?>
+    
+    <div class="row">
+      
+      <div class="col-md-4 col-sm-12">
+        <div class="inner first">
+          <?php print $footer_contact; ?>
+        </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <div class="inner">
+          <h2><?php print t('Read the blog'); ?></h2>
+          <?php print $footer_blog; ?>
+        </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <div class="inner last">
+          <h2><?php print t('Interesting links'); ?></h2>
+          <?php print $footer_links; ?>
+        </div>
+      </div>
+      
+    </div>
 
-    <?php if (!empty($footer_nav)): ?>
-    <nav class="doormat-menu" role="navigation">
-      <?php if (!empty($footer_nav)): ?>
-        <?php print render($footer_nav); ?>
-      <?php endif; ?>
-    </nav>
-    <?php endif; ?>
-
-    <p class="footer-link">Website by <a href="http://www.menhir.be">Menhir</a></p>
   </div>
 </footer>
+
+<div id="designed-by" class="container">
+  <p class="footer-link">Design & Development by <a href="http://www.makingdesign.be">Making Design</a> &amp; <a href="http://www.menhir.be">Menhir</a></p>
+</div>

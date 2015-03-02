@@ -9,7 +9,7 @@
  * Implements hook_preprocess_views_view_grid().
  */
 function martinvanwunnik_preprocess_views_view_grid(&$vars) {
-
+  
   if (!empty($vars['view']->style_options)) {
     $number_of_columns = $vars['view']->style_options['columns'];
     if ($number_of_columns == 4) {
@@ -143,24 +143,35 @@ function martinvanwunnik_preprocess_page(&$variables) {
     }
 
   }
-
+  
+  // classes array adjustments.
+  if ($object = menu_get_object('node')) {
+    if ($object->type == 'page') {
+      $icon_items = field_get_items('node', $object, 'field_icon');
+      $variables['title_icon'] = theme('image_style', array('style_name' => 'title_icon', 'path' => $icon_items[0]['uri']));
+    }
+  }
 
   // Primary nav.
-  $data = menu_tree_all_data('main-menu');
+  global $language;
+  $menu_name = $language->language == 'fr' ? 'menu-main-menu-fr' : ($language->language == 'nl' ? 'menu-main-menu-nl' : 'main-menu');
+  $data = menu_tree_all_data($menu_name);
   $tree = menu_tree_output($data);
   $tree['#theme_wrappers'] = array('menu_tree__primary');
   $variables['primary_nav'] = drupal_render($tree);
-
-  //dsm($footer_tree, 'footer tree');
-  /*$footer_tree = $tree;
-  foreach ($footer_tree as $mlid => $menu_link_data) {
-    if (is_numeric($mlid)) {
-      $footer_tree[$mlid]['#doormat'] = TRUE;
-    }
-  }
-  $footer_tree['#theme_wrappers'] = array('menu_tree__primary');
-  $variables['footer_nav'] = drupal_render($footer_tree);
-   */
+  
+  $contact = array('#theme' => 'martin_contact_footer');
+  $contact['#tel'] = variable_get('site_tel');
+  $contact['#email'] = variable_get('site_email');
+  $contact['#linkedin'] = array('url' => variable_get('site_linkedin_url'), 'title' => variable_get('site_linkedin_text'));
+  $contact['#skype_id'] = variable_get('site_skype_id');
+  $variables['footer_contact'] = drupal_render($contact);
+    
+  $blog_view = views_embed_view('blog', 'block_1');
+  $variables['footer_blog'] = $blog_view;
+  
+  $links_view = views_embed_view('interesting_links', 'block');
+  $variables['footer_links'] = $links_view;
 
   // Slogan (ow yeah, we use it!
   if (!drupal_is_front_page()) {
@@ -185,6 +196,14 @@ function martinvanwunnik_preprocess_page(&$variables) {
  * @see page.tpl.php
  */
 function martinvanwunnik_process_page(&$variables) {
+}
+
+/**
+ * Implements hook_process_html().
+ *
+ * @see html.tpl.php
+ */
+function martinvanwunnik_preprocess_html(&$variables) {
   // classes array adjustments.
 }
 

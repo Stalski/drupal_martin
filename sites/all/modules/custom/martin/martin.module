@@ -6,6 +6,77 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function martin_menu() {
+  
+  $items = array();
+  
+  $items['admin/config/martin'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'Marin config',
+    'file' => 'includes/admin.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('martin_settings_form'),
+    'access arguments' => array('access site configuration'),
+  );
+  
+  return $items;
+  
+}
+
+/**
+ * Implements hook_theme().
+ */
+function martin_theme() {
+  
+  $theme = array();
+  
+  $theme['martin_contact_row'] = array(
+    'variables' => array('tel' => NULL, 'email' => NULL, 'linkedin' => NULL),
+    'template' => 'martin-contact-row',
+    'path' => drupal_get_path('module', 'martin') . '/templates',
+    'file' => 'theme.inc',
+  );
+  
+  $theme['martin_contact_footer'] = array(
+    'variables' => array('tel' => NULL, 'email' => NULL, 'linkedin' => NULL, 'skype_id' => NULL),
+    'template' => 'martin-contact-footer',
+    'path' => drupal_get_path('module', 'martin') . '/templates',
+    'file' => 'theme.inc',
+  );
+  
+  return $theme;
+  
+}
+
+/**
+ * Implements hook_ctools_plugin_directory()
+ */
+function martin_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/' . $plugin_type;
+  }
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function martin_entity_info_alter(&$entity_info) {
+  
+  if (isset($entity_info['fieldable_panels_pane'])) {
+    
+    $base_bundle = $entity_info['fieldable_panels_pane']['bundles']['fieldable_panels_pane'];
+    $entity_info['fieldable_panels_pane']['bundles']['cta_jumpto'] = $base_bundle;
+    $entity_info['fieldable_panels_pane']['bundles']['cta_jumpto']['label'] = t('CTA: Jump To Page');
+    $entity_info['fieldable_panels_pane']['bundles']['cta_jumpto']['admin']['real path'] = 'admin/structure/fieldable-panels-panes/manage/cta-jumpto';
+  
+    unset($entity_info['fieldable_panels_pane']['bundles']['fieldable_panels_pane']);
+    
+  }
+}
+
+/**
  * Implements hook_ds_fields_info_alter
  */
 function martin_ds_fields_info_alter(&$fields, $entity_type) {
@@ -14,6 +85,27 @@ function martin_ds_fields_info_alter(&$fields, $entity_type) {
     $fields['node_link']['properties']['default']['link_class'] = '';
     $fields['node_link']['function'] = 'martin_node_link';
   }
+}
+
+/**
+ * Implements hook_preprocess_fieldable_panels_pane().
+ */
+function martin_preprocess_fieldable_panels_pane(&$variables) {
+  
+  switch ($variables['elements']['#bundle']) {
+    
+    case 'cta_jumpto':
+      $node = $variables['field_content_reference'][0]['entity'];
+      $icon_items = field_get_items('node', $node, 'field_icon_original');
+      $variables['icon'] = theme('image', array('path' => $icon_items[0]['uri']));
+      $variables['row_title'] = check_plain($node->title);
+      $variables['jump_to_text'] = $variables['field_jump_to_text'][0]['safe_value'];
+      $variables['url'] = url('node/' . $node->nid);
+      $variables['link'] = l($variables['row_title'], 'node/' . $node->nid);
+      break;
+    
+  }
+  
 }
 
 /**

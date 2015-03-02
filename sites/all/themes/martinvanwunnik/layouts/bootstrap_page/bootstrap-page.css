@@ -1,0 +1,27 @@
+.row-content-1 .views-row {
+  border-bottom: 1px solid #444;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.row-content-1 .views-row h2 {
+  font-weight: 400;
+}
+
+.linkedin-link,
+.contact-link {
+  display: block;
+  line-height: 1.7em;
+  padding: 10px;
+  text-align: center;
+  color: #FFF;
+  font-size: 1.1em;
+}
+
+.linkedin-link {
+  background-color: #1767ac;
+}
+
+.contact-link {
+  background-color: #000;
+}
