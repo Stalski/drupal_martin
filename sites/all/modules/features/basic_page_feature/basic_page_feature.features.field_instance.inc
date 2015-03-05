@@ -17,6 +17,12 @@ function basic_page_feature_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'central_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -80,6 +86,13 @@ function basic_page_feature_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Deze korte tekst wordt enkel getoond als de pagina op de homepagina staat. Bijvoorbeeld: de "over ons" pagina kan een teaser hebben die dan gebruikt op de home pagina in 1 van de secties.',
     'display' => array(
+      'central_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -137,6 +150,12 @@ function basic_page_feature_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'central_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -205,6 +224,12 @@ function basic_page_feature_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'central_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -270,6 +295,12 @@ function basic_page_feature_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'central_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',

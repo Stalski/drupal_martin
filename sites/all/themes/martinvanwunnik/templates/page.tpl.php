@@ -7,6 +7,8 @@
 
   <div class="container">
     <div class="navbar-header clearfix">
+      
+      <?php print $language_switcher; ?>
 
       <?php if (!empty($primary_nav)): ?>
       <div id="main-menu" class="navbar-collapse collapse">

@@ -440,7 +440,8 @@ function custom_martin_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Oplopend';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Aflopend';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
@@ -477,13 +478,6 @@ function custom_martin_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'testimonial' => 'testimonial',
-  );
-  /* Filter criterion: Inhoud: Taal */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Block */

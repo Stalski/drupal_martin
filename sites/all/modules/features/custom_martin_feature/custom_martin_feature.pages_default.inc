@@ -67,34 +67,28 @@ function custom_martin_feature_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-b45f6920-fbfe-422e-ac23-0b6993fcc4ee';
+    $pane->pid = 'new-4a9ca0d1-372a-46aa-ab7f-a4bad5a2ce89';
     $pane->panel = 'row_content_1';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views';
+    $pane->subtype = 'nodequeue_4';
     $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'site_language',
-          'settings' => array(
-            'language' => array(
-              'nl' => 'nl',
-              'default' => 0,
-              'en' => 0,
-              'fr' => 0,
-            ),
-          ),
-          'not' => FALSE,
-        ),
-      ),
-    );
+    $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Internationaal project management',
-      'title' => 'Internationaal project management',
-      'body' => '<p>Arsima Projects geeft training en workshops over IT en finance, vooral aan aan KMO\'s en multinationals. Zaakvoerder Martin van Wunnik is ook actief als financieel consultant voor startende ondernemingen en als gastspreker op evenementen in binnen- en buitenland.</p>
-',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -104,9 +98,9 @@ function custom_martin_feature_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'b45f6920-fbfe-422e-ac23-0b6993fcc4ee';
-    $display->content['new-b45f6920-fbfe-422e-ac23-0b6993fcc4ee'] = $pane;
-    $display->panels['row_content_1'][0] = 'new-b45f6920-fbfe-422e-ac23-0b6993fcc4ee';
+    $pane->uuid = '4a9ca0d1-372a-46aa-ab7f-a4bad5a2ce89';
+    $display->content['new-4a9ca0d1-372a-46aa-ab7f-a4bad5a2ce89'] = $pane;
+    $display->panels['row_content_1'][0] = 'new-4a9ca0d1-372a-46aa-ab7f-a4bad5a2ce89';
     $pane = new stdClass();
     $pane->pid = 'new-cfa1a50f-fc99-4b37-bb54-0e5117ec031f';
     $pane->panel = 'row_content_1';
@@ -116,8 +110,8 @@ function custom_martin_feature_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
-      'use_pager' => 1,
-      'nodes_per_page' => '10',
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,

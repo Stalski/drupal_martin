@@ -46,10 +46,6 @@ h1 {
   font-weight: 700;
 }
 
-.carousel-caption h1 {
-  line-height: 2em;
-}
-
 .page-header {
   font-family: 'Bitter', sans-serif;
   line-height: 3em;
@@ -108,10 +104,6 @@ p {
   line-height: 1.6em;
 }
 
-p.lead {
-  background: #000 url("../images/pijl_titel_01.png") 0 50% no-repeat;
-}
-
 .floatleft {
   float: left;
   margin-right: 30px;
@@ -148,15 +140,16 @@ p.lead {
 
 .icon-link {
   margin: 30px 0 0;
-  background: transparent url("../images/pijl_01.png") 50% 100% no-repeat;
-  padding-bottom: 50px;
-  font-family: 'Bitter', sans-serif;
-  font-size: 1.4em;
-  font-weight: 700;
 }
 
 .icon-link a {
+  display: block;
   color: #000;
+  background: transparent url("../images/pijl_01.png") 50% 100% no-repeat;
+  font-family: 'Bitter', sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  padding-bottom: 50px;
 }
 
 .icon-link-simple {

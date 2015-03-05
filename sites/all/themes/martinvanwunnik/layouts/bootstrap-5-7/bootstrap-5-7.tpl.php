@@ -7,12 +7,12 @@
 
 <div class="row">
   <?php if (!empty($content['left'])): ?>
-  <div class="region region-sidebar-first col-md-5 col-lg-5">
+  <div class="region region-sidebar-first col-xs-12 col-sm-6 col-md-5 col-lg-5">
     <?php print $content['left']; ?>
   </div>
   <?php endif; ?>
   
-  <div class="region region-content col-xs-12 col-sm-12 col-md-<?php print $right_col; ?> col-lg-<?php print $right_col; ?>">
+  <div class="region region-content col-xs-12 col-sm-6 col-md-<?php print $right_col; ?> col-lg-<?php print $right_col; ?>">
     <?php print $content['right']; ?>
   </div>
   

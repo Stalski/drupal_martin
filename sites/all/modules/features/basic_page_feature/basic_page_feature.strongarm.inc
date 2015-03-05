@@ -57,6 +57,9 @@ function basic_page_feature_strongarm() {
       'featured' => array(
         'custom_settings' => TRUE,
       ),
+      'central_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -90,6 +93,10 @@ function basic_page_feature_strongarm() {
           ),
           'featured' => array(
             'weight' => '11',
+            'visible' => FALSE,
+          ),
+          'central_teaser' => array(
+            'weight' => '12',
             'visible' => FALSE,
           ),
         ),

@@ -1,31 +1,27 @@
 /**
  * Generic overrides & fixes.
  */
-.container .container {
-  width: auto;
+@media (max-width: 768px) {
+  .collapse {
+    display: block;
+    visibility: visible;
+  }
 }
-
 /**
  * Carousel overrides.
  */
 
-.carousel {
-  height: auto;
-}
-.carousel .carousel-inner {
-  height: auto;
-  overflow: hidden;
-}
 
 .carousel-control {
   bottom: 0;
-  top: 45%;
+  top: 180px;
   left: 0;
   color: #fff;
   font-size: 20px;
   position: absolute;
-  width: 125px;
-  height: 125px;
+  width: 63px;
+  height: 63px;
+  opacity: 1;
 }
 
 .carousel-control.left {
@@ -37,50 +33,63 @@
     background-repeat: no-repeat;
 }
 
-.carousel h1 {
-  font-family: 'Bitter-Bold', sans-serif;
-  font-size: 4em;
-  letter-spacing: 0.02em;
-}
-
 .carousel ul {
   margin: 0; padding: 0;
 }
-
 .carousel ul li {
   list-style-image: none;
   list-style-type: none;
   background: url("../images/bullet_header_01.png") 0 50% no-repeat;
   font-family: 'Roboto-Regular', sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.2em;
+  line-height: 1.7em;
   padding-left: 30px;
+}
+
+.carousel {
+  height: 460px;
+}
+.carousel .carousel-inner {
+  height: auto;
+  overflow: hidden;
+  height: 460px;
 }
 
 .carousel .carousel-caption {
   text-align: left;
-  bottom: auto;
-  top: 15%;
-  left: 35%;
+  top: 0;
+  left: 10%;
+  right: 10%;
 }
+
+.carousel h1 {
+  font-family: 'Bitter', sans-serif;
+  font-weight: 700;
+  font-size: 2.7em;
+  letter-spacing: 0.02em;
+  line-height: 1.2em;
+}
+
 .carousel .carousel-caption-left {
-  text-align: right;
-  bottom: auto;
-  position: absolute; top: 10%; left: 19%;
-  padding-top: 0;
-  z-index: 10;
+  float: left;
+  padding-top: 60px;
+}
+.carousel .carousel-caption-right {
+  float: left;
+  padding-top: 110px;
+  padding-left: 25px;
 }
 
 .carousel .button-group {
   margin-left: 10px;
   margin-top: 30px;
 }
-
 .carousel .btn-primary,
 .carousel .btn-lg {
   border: 2px solid #FFF;
   color: #FFF;
-  font-family: 'Bitter-Bold', sans-serif;
+  font-family: 'Bitter', sans-serif;
+  font-weight: 700;
   font-size: 1.3em;
   background-color: rgba(255,255,255, 0.3);
   border-radius: 0px;

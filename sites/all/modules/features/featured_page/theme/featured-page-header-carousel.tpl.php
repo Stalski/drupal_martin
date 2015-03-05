@@ -3,10 +3,11 @@
  * Header template for bootstrap carousel.
  */
 
+
 $carousel_id = "genericHeader";
 ?>
 
-<div id="<?php print $carousel_id ?>" class="carousel slide clearfix" data-ride="carousel">
+<div id="<?php print $carousel_id ?>" class="carousel slide clearfix hidden-sm hidden-xs" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <?php foreach ($items as $delta => $item): ?>
@@ -19,17 +20,24 @@ $carousel_id = "genericHeader";
     <div class="item<?php print $delta == 0 ? ' active' : ''; ?>">
       <?php print $item['image']; ?>
       <div class="container">
-        <?php if ($item['small_image']) : ?>
-        <div class="carousel-caption-left">
-          <?php print $item['small_image']; ?>
-        </div>
-        <?php endif; ?>
         <div class="carousel-caption">
-          <h1><?php print $item['title']; ?></h1>
-          <?php print $item['message']; ?>
-          <div class="button-group">
-            <?php print $item['link']; ?>
+          
+          <div class="row">
+            <div class="carousel-caption-left">
+            <?php if (!empty($item['small_image'])) : ?>
+              <?php print $item['small_image']; ?>
+            <?php endif; ?>
+            </div>
+
+            <div class="carousel-caption-right">
+              <h1><?php print $item['title']; ?></h1>
+              <?php print $item['message']; ?>
+              <div class="button-group">
+                <?php print $item['link']; ?>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>

@@ -187,6 +187,27 @@ function martinvanwunnik_preprocess_page(&$variables) {
       $variables['header_carousel'] = $block['content'];
     }
   }
+  
+  // language switcher.
+  $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+  $languages = language_list('enabled');
+  $links = array();
+  foreach ($languages[1] as $lan) {
+    $links[$lan->language] = array(
+      'href'       => $path,
+      'title'      => $lan->native,
+      'language'   => $lan,
+      'attributes' => array(
+        'id'    => $lan->language,
+        'lang'  => $lan->language,
+        'title' => t('Watch this page in @language.', array('@language' => $lan->native), array('langcode'=>$lan->language)),
+      ),
+    );
+  }
+  drupal_alter('translation_link', $links, $path);
+  unset($links[i18n_language()->language]);
+  $attr = array('class'=>'lang-switcher-comp');
+  $variables['language_switcher'] = theme_links(array('links' => $links, 'attributes' => $attr, 'heading' => array()));
 
 }
 

@@ -23,6 +23,8 @@ function _feature_page_header_block() {
   $query->condition('n.language', $GLOBALS['language']->language);
   $query->condition('fpt.field_page_type_value', 'featured_header');
   $query->range(0, 10);
+  $query->orderBy('n.changed', 'DESC');
+  $query->orderBy('n.created', 'DESC');
   $result = $query->execute();
 
   $items = array();
