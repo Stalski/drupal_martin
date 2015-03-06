@@ -97,6 +97,11 @@ p {
   font-size: 1.1em;
   line-height: 1.5em;
 }
+@media (min-width: 768px) {
+  p.lead {
+    background: #000 url("../images/pijl_titel_01.png") 0 50% no-repeat;
+  }
+}
 
 .page-home  p {
   font-family: 'Lato', sans-serif;

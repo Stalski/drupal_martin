@@ -9,18 +9,17 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-  p.lead {
+  .page-home p.lead {
     color: #FFF;
     font-size: 1.5em;
     padding: 20px;
   }
 }
 @media (min-width: 768px) {
-  p.lead {
+  .page-home p.lead {
     color: #FFF;
     font-size: 2.3em;
     padding: 30px 30px 30px 90px;
-    background: #000 url("../images/pijl_titel_01.png") 0 50% no-repeat;
   }
 }
 

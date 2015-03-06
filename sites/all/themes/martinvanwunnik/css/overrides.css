@@ -54,6 +54,22 @@
   overflow: hidden;
   height: 460px;
 }
+@media (min-width: 768px) { 
+  .carousel, .carousel-inner {
+    height: 380px;
+  }
+}
+@media (min-width: 992px) { 
+  .carousel, .carousel-inner {
+    height: 380px;
+  }
+}
+@media (min-width:1200px) {
+  .carousel, .carousel-inner {
+    height: 460px;
+  }
+}
+
 
 .carousel .carousel-caption {
   text-align: left;
