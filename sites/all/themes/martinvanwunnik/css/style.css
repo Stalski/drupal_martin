@@ -205,6 +205,10 @@ p {
   background: transparent url("../images/contact_footer_04.png") 0px 50% no-repeat;
 }
 
+.email a {
+  color: #FFF;
+}
+
 footer {
   color: #CCC;
 }

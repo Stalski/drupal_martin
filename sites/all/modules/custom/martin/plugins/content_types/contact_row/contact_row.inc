@@ -34,6 +34,9 @@ function martin_contact_row_content_type_render($subtype, $conf, $panel_args = a
   
   $tel = variable_get('site_tel');
   $email = variable_get('site_email');
+  if (variable_get('site_email_mailto')) {
+    $email = l($email, 'mailto:' . $email);
+  }
   $linkedin_text = variable_get('site_linkedin_text');
   $linkedin_url = variable_get('site_linkedin_url');
   if (!empty($tel) && !empty($email)) {

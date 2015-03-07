@@ -162,7 +162,11 @@ function martinvanwunnik_preprocess_page(&$variables) {
   
   $contact = array('#theme' => 'martin_contact_footer');
   $contact['#tel'] = variable_get('site_tel');
-  $contact['#email'] = variable_get('site_email');
+  $email = variable_get('site_email');
+  if (variable_get('site_email_mailto')) {
+    $email = l($email, 'mailto:' . $email);
+  }
+  $contact['#email'] = $email;
   $contact['#linkedin'] = array('url' => variable_get('site_linkedin_url'), 'title' => variable_get('site_linkedin_text'));
   $contact['#skype_id'] = variable_get('site_skype_id');
   $variables['footer_contact'] = drupal_render($contact);

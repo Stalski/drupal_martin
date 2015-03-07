@@ -4,7 +4,7 @@
   
     <div class="col-md-6">
         
-        <h2 class="page-header"><?php print t('Contact Arisma Projects'); ?></h2>
+        <h2 class="page-header"><?php print t('Contact ARISMA Projects'); ?></h2>
       
     </div>
   
