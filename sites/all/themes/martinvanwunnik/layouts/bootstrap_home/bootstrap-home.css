@@ -38,6 +38,12 @@
   margin-left: 50px;
 }
 
+@media (max-width: 768px) {
+  .region-sidebar-first {
+    margin-bottom: 25px;
+  }
+}
+
 /* row content 1 : Project management (basic pages , grijze box) */
 .region-content .row-content-1 {
   background-color: #e8eaec;

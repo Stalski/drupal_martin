@@ -38,7 +38,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <?php print l(t('Contact Martin van Wunnik'), 'contact', array('attributes' => array('class' => array('contact-link')))); ?>
+          <?php print l(t('Contact Martin van Wunnik'), variable_get('site_contact_url_' . $GLOBALS['language']->language), array('attributes' => array('class' => array('contact-link')))); ?>
         </div>
         <div class="col-md-6">
           <?php print l(t('Visit the linkedIn page'), variable_get('site_linkedin_url'), array('absolute' => TRUE, 'attributes' => array('class' => array('linkedin-link')))); ?>

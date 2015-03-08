@@ -371,7 +371,7 @@ footer .col-md-4 .inner {
 .page-blog .region-content h2.pane-title,
 .page-taxonomy .region-content h2.pane-title {
   padding-bottom: 0px;
-}
+} 
 
 .pane-blog-categories h2,
 .page-taxonomy h2 {
@@ -384,8 +384,11 @@ footer .col-md-4 .inner {
   padding: 15px 0 10px 0;
 }
 
-.view-blog .views-row {
+.view-display-id-panel_pane_1 .views-row {
   margin-bottom: 75px;
+}
+.view-display-id-block_1 {
+  
 }
 
 .view-blog .cta-link {

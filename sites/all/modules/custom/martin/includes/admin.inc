@@ -41,10 +41,22 @@ function martin_settings_form() {
     '#default_value' => variable_get('site_skype_id', ''),
   );
   
-  /*$languages = language_list();
+  
+  $form['langs'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Language specific settings'),
+  );
+  $languages = language_list();
   foreach ($languages as $language) {
     
-  }*/
+    $form['langs']['site_contact_url_' . $language->language] = array(
+      '#type' => 'textfield',
+      '#title' => 'Contact page (' . $language->language . ')',
+      '#description' => 'Enter the relative path to the contact page (E.G. node/1234)',
+      '#default_value' => variable_get('site_contact_url_' . $language->language),
+    );
+    
+  }
   
   return system_settings_form($form);
   
