@@ -35,7 +35,38 @@ function custom_martin_feature_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__product';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'featured' => array(
+        'custom_settings' => FALSE,
+      ),
+      'icon' => array(
+        'custom_settings' => FALSE,
+      ),
+      'central_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'language' => array(
@@ -52,6 +83,14 @@ function custom_martin_feature_strongarm() {
         'language' => array(
           'teaser' => array(
             'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '2',
             'visible' => FALSE,
           ),
         ),
@@ -73,7 +112,7 @@ function custom_martin_feature_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -93,6 +132,9 @@ function custom_martin_feature_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'central_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -103,7 +145,7 @@ function custom_martin_feature_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
       ),
       'display' => array(
@@ -118,6 +160,10 @@ function custom_martin_feature_strongarm() {
           ),
           'teaser' => array(
             'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '3',
             'visible' => FALSE,
           ),
         ),

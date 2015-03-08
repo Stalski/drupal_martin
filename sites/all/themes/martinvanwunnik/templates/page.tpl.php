@@ -55,10 +55,12 @@
   <div class="container">
     <?php print render($title_prefix); ?>
     <?php if (!empty($title)): ?>
+      <?php if (!empty($title_icon)) : ?>
+      <div class="page-header-icon"><?php print $title_icon; ?></div>
+      <h1 class="page-header page-header-has-icon">
+      <?php else: ?>
       <h1 class="page-header">
-        <?php if (!empty($title_icon)) : ?>
-          <?php print $title_icon; ?>
-        <?php endif; ?>
+      <?php endif; ?>
         <?php print $title; ?>
       </h1>
     <?php endif; ?>

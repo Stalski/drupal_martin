@@ -16,7 +16,7 @@ function martinvanwunnik_preprocess_views_view_grid(&$vars) {
       $column_class = "col-xs-6 col-md-3 col-sm-6";
     }
     elseif ($number_of_columns == 3) {
-      $column_class = "col-xs-6 col-md-4 col-sm-6";
+      $column_class = "col-xs-12 col-md-4 col-sm-12";
     }
     elseif ($number_of_columns == 6) {
       $column_class = "col-xs-6 col-md-2 col-sm-6";

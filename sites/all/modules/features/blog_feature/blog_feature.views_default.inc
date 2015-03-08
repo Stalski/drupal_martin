@@ -104,7 +104,7 @@ function blog_feature_views_default_views() {
   /* Display: Te lezen op de blog */
   $handler = $view->new_display('block', 'Te lezen op de blog', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Read the blog';
+  $handler->display->display_options['title'] = 'Te lezen op de blog';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -159,7 +159,6 @@ function blog_feature_views_default_views() {
     t('Blog listing'),
     t('Vensters bekijken'),
     t('Te lezen op de blog'),
-    t('Read the blog'),
   );
   $export['blog'] = $view;
 

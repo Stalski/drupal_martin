@@ -1,3 +1,11 @@
+.region-content .pane-content h2 {
+  padding-bottom: 25px;
+  padding-top: 15px;
+}
+.region-content .pane-content h2:first-of-type {
+  padding-top: 0 !important;
+}
+
 .row-content-1 .views-row {
   border-bottom: 1px solid #444;
   margin-bottom: 30px;
@@ -16,10 +24,16 @@
   text-align: center;
   color: #FFF;
   font-size: 1.1em;
+  margin: 1em 0;
 }
 
 .linkedin-link {
   background-color: #1767ac;
+}
+
+a.linkedin-link:hover,
+a.contact-link:hover {
+  color: #FFF;
 }
 
 .contact-link {

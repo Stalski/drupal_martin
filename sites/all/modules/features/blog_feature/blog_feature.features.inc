@@ -40,7 +40,7 @@ function blog_feature_image_default_styles() {
     'name' => 'blog_teaser',
     'label' => 'Blog teaser',
     'effects' => array(
-      1 => array(
+      4 => array(
         'label' => 'Schalen',
         'help' => 'Door te schalen worden de originele verhoudingen behouden. Als één van de dimensies wordt ingevuld zal de andere worden berekend.',
         'effect callback' => 'image_scale_effect',
@@ -50,7 +50,7 @@ function blog_feature_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 570,
+          'width' => 850,
           'height' => '',
           'upscale' => 0,
         ),
@@ -72,7 +72,7 @@ function blog_feature_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );

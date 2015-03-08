@@ -53,7 +53,14 @@ function featured_page_strongarm() {
           'weight' => '2',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'full' => array(
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__featured_page'] = $strongarm;

@@ -12,6 +12,52 @@ function custom_martin_feature_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|product|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'product';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_main_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'floatright',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|product|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|product|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'product';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_main_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'floatright',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|product|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|product|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'product';
@@ -48,6 +94,29 @@ function custom_martin_feature_ds_field_settings_info() {
     ),
   );
   $export['node|product|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|project|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'project';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_main_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'floatright',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|project|full'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -122,6 +191,66 @@ function custom_martin_feature_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|product|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'product';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'panels-onecol';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'middle' => array(
+        0 => 'field_main_image',
+        1 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_main_image' => 'middle',
+      'body' => 'middle',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'middle' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|product|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|product|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'product';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'panels-onecol';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'middle' => array(
+        0 => 'field_main_image',
+        1 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_main_image' => 'middle',
+      'body' => 'middle',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'middle' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|product|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|product|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'product';
@@ -183,6 +312,36 @@ function custom_martin_feature_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|project|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|project|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'project';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'panels-onecol';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'middle' => array(
+        0 => 'field_main_image',
+        1 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'field_main_image' => 'middle',
+      'body' => 'middle',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'middle' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|project|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

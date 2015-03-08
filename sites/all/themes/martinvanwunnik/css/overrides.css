@@ -125,14 +125,6 @@
 }
 
 /**
- * Header h1 overrides.
- */
-.page-header {
-  border-bottom: none;
-  margin: 0.4em 0;
-}
-
-/**
  * Breadcrumb overrides.
  */
 ol.breadcrumb {

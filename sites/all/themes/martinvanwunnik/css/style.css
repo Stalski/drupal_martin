@@ -48,16 +48,37 @@ h1 {
 
 .page-header {
   font-family: 'Bitter', sans-serif;
-  line-height: 3em;
+  line-height: 1.5em;
   font-size: 2.1em;
   color: #FFF;
   font-weight: 700;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-bottom: none;
+  margin: 0.4em 0;
 }
-
-.page-header img {
+.page-header-icon {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  float: left;
   margin-right: 30px;
+}
+h1.page-header-has-icon {
+  padding-left: 110px;
+}
+@media (max-width: 990px) {
+  h2.page-header {
+    padding: 0;
+    margin: 0 0 0.4em 0;
+    line-height: 1.5em;
+  }
+  h1.page-header {
+    font-size: 1.5em;
+  }
+  .page-header-icon {
+    padding-bottom: 18px;
+    padding-top: 18px;
+  }
 }
 
 h2 {
@@ -111,14 +132,25 @@ p {
 
 .floatleft {
   float: left;
-  margin-right: 30px;
-  margin-bottom: 30px;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
 .floatright {
   float: right;
-  margin-left: 30px;
-  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .floatright {
+    width: 100%;
+  }
+}
+
+.floatright img {
+  width: 100%;
+  height: auto;
 }
 
 .region-sidebar-first img {
@@ -126,21 +158,29 @@ p {
   height: auto;
 }
 
+img.responsive,
+.responsive img {
+  width: 100%;
+  height: auto;
+}
+
 .more-link,
 .read-more {
-  font-size: 1.6em;
   background-color: #000;
-  padding: 10px 25px 10px 50px;
+  padding: 7px 25px 7px 50px;
   margin: 30px 50px 0 0;
   background: #000 url("../images/pijl_button_01.png") 15px 50% no-repeat;
   display: inline-block;
+  font-weight: 400;
 }
 
 .more-link a,
 .cta-link a,
 .read-more a {
+  font-size: 1.4em;
   color: #FFF;
   font-family: "Lato-Regular";
+  font-weight: 400;
 }
 
 .icon-link {
@@ -178,7 +218,7 @@ p {
   color: #FFF;
   line-height: 50px;
   font-family: "Lato";
-  font-size: 1.4em;
+  font-size: 1.25em;
 }
 
 .contact-info-item {
@@ -250,6 +290,9 @@ footer a,
 footer h2 {
   color: #FFF;
 }
+footer a:hover {
+  color: #FFF;
+}
 
 footer a {
   line-height: 1.7em;
@@ -262,9 +305,19 @@ footer h2 {
   margin-bottom: 15px;
 }
 
+@media (max-width: 990px) {
+  footer h2 {
+    margin: 1.5em 0 1em 0;
+  }
+}
+
 footer .views-row,
 footer .contact-info-item {
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #333;
+}
+footer .views-row {
+  padding-bottom: 7px;
+  padding-top: 5px;
 }
 
 footer .col-md-4 .inner {
@@ -274,4 +327,69 @@ footer .col-md-4 .inner {
 #designed-by p.footer-link {
   font-size: 1em;
   text-align: right;
+}
+
+
+/**
+ * Blog section & overview page.
+ */
+.pane-blog-categories {
+  background-color: #1767ac;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pane-blog-categories ul li {
+  background-image: none;
+  padding-left: 0;
+  padding: 0;
+  border-bottom: 1px solid #FFF;
+}
+
+.pane-blog-categories ul li a {
+  display: block;
+  color: #FFF;
+  padding: 3px 0;
+}
+
+.pane-blog-categories ul li:last-of-type{
+  border-bottom: 0 none;
+}
+
+.page-blog .region-content img,
+.page-taxonomy .region-content img {
+  margin-bottom: 10px;
+}
+
+.page-blog .region-content h2,
+.page-taxonomy .region-content h2 {
+  font-size: 1.6em;
+  padding-bottom: 25px;
+}
+.page-blog .region-content h2.pane-title,
+.page-taxonomy .region-content h2.pane-title {
+  padding-bottom: 0px;
+}
+
+.pane-blog-categories h2,
+.page-taxonomy h2 {
+  font-size: 1.6em;
+  padding: 0;
+  color: #FFF;
+}
+
+.view-blog p {
+  padding: 15px 0 10px 0;
+}
+
+.view-blog .views-row {
+  margin-bottom: 75px;
+}
+
+.view-blog .cta-link {
+  background-color: #1767ac;
+  color: #FFF;
+  margin: 0;
 }
