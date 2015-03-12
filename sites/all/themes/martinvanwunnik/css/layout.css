@@ -1,16 +1,14 @@
-.logo {
+.logo img {
   margin: 20px 0px;
 }
 .logo img {
   width: 150px;
 }
-/* Small devices (tablets, 768px and up) */
-@media (max-width: 768px) {
-  .logo {
-    margin: 20px;
-  }
-}
 
+#main-menu {
+  float: right;
+  margin-top: 75px;
+}
 
 #page-header {
    background-color: #000;
@@ -36,4 +34,16 @@ ul.lang-switcher-comp li {
 
 ul.lang-switcher-comp li a {
   color: #444;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .logo img {
+    margin: 20px 0;
+  }
+  #main-menu {
+    float: none;
+    margin-top: 0;
+  }
 }

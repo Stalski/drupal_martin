@@ -47,30 +47,29 @@
   padding-left: 30px;
 }
 
-.carousel {
-  height: 460px;
-}
+.carousel,
 .carousel .carousel-inner {
   height: auto;
-  overflow: hidden;
-  height: 460px;
 }
-@media (min-width: 768px) { 
+@media (max-width: 768px) { 
   .carousel, .carousel-inner {
     height: 380px;
   }
 }
-@media (min-width: 992px) { 
+@media (max-width: 992px) { 
   .carousel, .carousel-inner {
     height: 380px;
   }
 }
 @media (min-width:1200px) {
   .carousel, .carousel-inner {
-    height: 460px;
+    height: auto;
   }
 }
 
+.carousel .carousel-inner {
+  overflow: hidden;
+}
 
 .carousel .carousel-caption {
   text-align: left;

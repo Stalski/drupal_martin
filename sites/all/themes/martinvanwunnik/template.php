@@ -132,7 +132,7 @@ function martinvanwunnik_preprocess_page(&$variables) {
     }
 
     if ($page['name'] == 'term_view') {
-      $hide_page_title = TRUE;
+      //$hide_page_title = TRUE;
     }
 
     // Hide the normal H1.
@@ -240,6 +240,17 @@ function martinvanwunnik_preprocess_html(&$variables) {
 function martinvanwunnik_breadcrumb($variables) {
   $output = '';
   $breadcrumb = $variables['breadcrumb'];
+  
+  $object = menu_get_object();
+  if (isset($object->type) && $object->type == 'blog_post') {
+    array_splice($breadcrumb, 1, 0, l(t('Blog'), 'blog'));
+  }
+  
+  if (arg(0) == 'taxonomy' && arg(1) == 'term') {
+    $term = menu_get_object('taxonomy_term', 2);
+    $breadcrumb[1] = l(t('Blog'), 'blog');
+    $breadcrumb[2] = $term->name;
+  }
 
   // Determine if we are to display the breadcrumb.
   $bootstrap_breadcrumb = theme_get_setting('bootstrap_breadcrumb');

@@ -1,5 +1,6 @@
 
 var Drupal = Drupal || {};
+Drupal.mainNav = Drupal.mainNav || {};
 
 (function($, Drupal){
   "use strict";
@@ -24,6 +25,21 @@ var Drupal = Drupal || {};
         });
 
       });
+      
+      // Alter the main navigation for mobile devices.
+      Drupal.mainNav.wrapper = $('#main-menu');
+      Drupal.mainNav.wrapper.prepend('<a class="nav-toggle" href="#" title="Main navigation toggle">Menu</a>');
+
+      Drupal.mainNav.menu = $('.menu', Drupal.mainNav.wrapper);
+      Drupal.mainNav.toggle = $('.nav-toggle');
+
+      Drupal.mainNav.toggle.bind('click', function(e) {
+        e.preventDefault();
+
+        Drupal.mainNav.menu.slideToggle();
+
+      });
+      
     }
   };
   

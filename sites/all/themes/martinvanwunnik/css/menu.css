@@ -1,8 +1,5 @@
 
-#main-menu {
-  float: right;
-  margin-top: 75px;
-}
+
 
 #main-menu ul {
 }
@@ -11,8 +8,37 @@
 }
 
 #main-menu ul li a {
-  font-family: 'Roboto-Regular', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1em;
   color: #000;
   text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+  #main-menu .menu {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+    padding: 7px 20px;
+    margin: 20px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    background-color: #1767ac;
+    color: #FFF;
+  }
+  
+  .nav-toggle:hover {
+    color: #FFF;
+  }
+  
+  #main-menu ul li {
+    padding-left: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
 }

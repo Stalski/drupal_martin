@@ -6,22 +6,13 @@
 <header id="navbar" role="banner">
 
   <div class="container">
-    <div class="navbar-header clearfix">
+    <div class="navbar-header clearfix row">
       
       <?php print $language_switcher; ?>
-
-      <?php if (!empty($primary_nav)): ?>
-      <div id="main-menu" class="navbar-collapse collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-      <?php endif; ?>
+      
 
       <?php if ($logo): ?>
-      <figure class="logo">
+      <figure class="logo col-md-3 col-sm-12 col-xs-12">
         <?php if($is_front): ?>
         <img src="/<?php print path_to_theme() . '/logo.png'; ?>" alt="<?php print t('Home'); ?>" />
         <?php else: ?>
@@ -30,6 +21,18 @@
           </a>
         <?php endif; ?>
       </figure>
+      <?php endif; ?>
+
+      <?php if (!empty($primary_nav)): ?>
+      <div id="main-menu" class="navbar-collapse collapse col-md-9 col-sm-12 col-xs-12">
+        <div class="menu">
+          <nav role="navigation">
+            <?php if (!empty($primary_nav)): ?>
+              <?php print render($primary_nav); ?>
+            <?php endif; ?>
+          </nav>
+        </div>
+      </div>
       <?php endif; ?>
 
     </div>
@@ -41,7 +44,7 @@
 
 </header>
 
-<header role="banner" id="page-header">
+<header role="banner" id="page-header" class="clearfix">
   <div class="container">
   <?php if (!empty($site_slogan)): ?>
     <p class="lead"><?php print t($site_slogan); ?></p>
